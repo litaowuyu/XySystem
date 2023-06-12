@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lt.mapper.ShoppingBagMapper">
+    <!--根据用户Id查询用户购物车-->
+    <select id="getShoppingBagByUserId" resultType="shoppingBag">
+        select *
+        from shopping_bag
+        where user_id = #{userId}
+    </select>
+    <delete id="deleteBag" >
+        delete from shopping_bag where goods_id = #{id}
+    </delete>
+    <insert id="addShoppingBag">
+        insert into shopping_bag(goods_id,user_id) values (#{goodsId},#{userId})
+    </insert>
+</mapper>

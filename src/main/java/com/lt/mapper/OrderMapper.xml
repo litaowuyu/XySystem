@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lt.mapper.OrderMapper">
+    <update id="deleteOrder">
+        UPDATE user_order SET is_delete = 1 WHERE order_id = #{orderId};
+    </update>
+    <insert id="add">
+        insert into user_order(order_id,user_account) values (#{orderId},#{userId})
+    </insert>
+</mapper>
